@@ -7,14 +7,48 @@
 <body>
   <a-scene embedded artoolkit='sourceType: webcam;'>
 
-    <!-- Player -->
-    <a-entity camera mouse-cursor>
-    </a-entity>
+
 
     <a-marker type="pattern" url="./patterns/pattern.patt">
-      <!-- <a-entity id="box" geometry="primitive: box" material="color: blue" position="0 0 0"></a-entity> -->
+      <a-entity
+        id="person_one"
+        scale="1 1 1"
+        position="-1.5 1 0"
+        geometry="
+            primitive: plane;
+            width: 2;
+            height: 0.7"
+        material="
+            color: white;
+            side: double;
+            transparent: true;
+            opacity: 1">
+        <a-entity
+          position="1.086 0.037 0.01"
+          class ='ignoreTemplate'>
+          <a-entity position="0 0 0"
+                    text="
+                        color: black;
+                        width: 4;
+                        lineHeight: 34;
+                        align: left;
+                        value: Hi! I am Person One\nand I am on the\nextreme left ;
+                        font: http://assets.scapic.com/fonts/Aleo.fnt;
+                        fontImage: http://assets.scapic.com/fonts/Aleo.png" >
+          </a-entity>
+      </a-entity>
+      </a-entity>
+      <!-- Player -->
       <a-entity
       id="box"
+      geometry="primitive: box"
+      material="color: blue"
+      position="1 2 0.25"
+      scale="0.5 0.5 0.5"
+      ></a-entity>
+
+      <a-entity
+      id="man"
       position="0 0 0"
       scale="1 1 1"
       json-model="src: url(./models/bot4.json);"
@@ -23,12 +57,18 @@
       </a-entity>
 
     </a-marker>
+    <a-entity camera mouse-cursor>
 
+    </a-entity>
+    <!-- <a-sky color="#000"></a-sky>
+  <a-entity position="0 1.8 3">
+    <a-entity camera look-controls></a-entity>
+  </a-entity> -->
   </a-scene>
   <script>
   document.getElementById("box").addEventListener('click',function(evt){
     console.log('Click Registered');
-      document.getElementById('box').setAttribute('animation-mixer','clip','walk');
+      document.getElementById('man').setAttribute('animation-mixer','clip','walk');
     });
   </script>
 
