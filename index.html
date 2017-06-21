@@ -11,12 +11,13 @@
     <a-entity camera mouse-cursor>
     </a-entity>
 
-    <a-marker type="pattern" url="pattern.patt">
+    <a-marker type="pattern" url="./patterns/pattern.patt">
       <!-- <a-entity id="box" geometry="primitive: box" material="color: blue" position="0 0 0"></a-entity> -->
       <a-entity
+      id="box"
       position="0 0 0"
       scale="1 1 1"
-      json-model="src: url(./bot4.json);"
+      json-model="src: url(./models/bot4.json);"
       animation-mixer="clip: run"
       >
       </a-entity>
@@ -25,9 +26,9 @@
 
   </a-scene>
   <script>
-  // document.getElementById("box").addEventListener('click',function(evt){
-  //     document.getElementById('box').setAttribute('material','color','red');
-  //   })
+  document.getElementById("box").addEventListener('click',function(evt){
+      document.getElementById('box').setAttribute('animation-mixer','clip','walk');
+    });
   </script>
 
 </body>
