@@ -70,8 +70,9 @@
 
 
 
-        <a-entity position="0 -0.1 0"  id="location">
+        <a-entity position="0 -0.1 0"  >
         <a-entity
+        id="location"
         geometry="primitive: sphere; radius:0.6; phiLength:180; "
         material="color: red"
         position="0.6 1.28 0"
@@ -258,7 +259,7 @@
       document.getElementById('nextButton').setAttribute('visible','true');
     });
 
-    document.getElementById("s2box").addEventListener('click',function(evt){
+    document.getElementById("nextButton").addEventListener('click',function(evt){
       document.getElementById('scene2').setAttribute('visible','false');
       document.getElementById('scene3').setAttribute('visible','true');
       });
