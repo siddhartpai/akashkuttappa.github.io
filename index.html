@@ -293,7 +293,32 @@
       document.getElementById('startButton').setAttribute('visible','false');
       document.getElementById('s3text').setAttribute('visible','false');
         document.getElementById('drone').setAttribute('animation-mixer','clip','BusterDrone');
+
       });
+
+    document.querySelector('a-scene').addEventListener('loaded',function(event){
+       document.querySelector('.a-canvas').addEventListener('click',function(event){
+            console.log('intersect',getIntersects(event));
+           // alert();
+        });
+ });
+ function getIntersects(event) {
+ 	// var THREE = window.THREE;
+         var raycaster = new THREE.Raycaster();
+         var mouse = new THREE.Vector2();
+         // var renderer = document.querySelector('.a-canvas');
+         var camera = document.querySelector('[camera]').object3DMap.camera;
+        // var object = document.querySelector('a-sky').object3DMap.mesh;
+        //var mouse = {};
+
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        var objects = document.querySelector('#drone').object3DMap.mesh;
+         var intersect = raycaster.intersectObject(objects,true);
+         return intersect;
+     };
   </script>
 
 </body>
