@@ -6,14 +6,213 @@
 
 <body>
   <a-scene embedded artoolkit='sourceType: webcam;'>
+    <a-entity camera mouse-cursor>
 
-
-
+    </a-entity>
     <a-marker type="pattern" url="./patterns/pattern.patt">
-      <a-entity
-        id="person_one"
+
+      <a-entity id="scene1" visible="false">
+        <a-entity
+          id="welcome"
+          scale="1 1 1"
+          position="0.6 1.8 0"
+          geometry="
+              primitive: plane;
+              width: 2;
+              height: 0.7"
+          material="
+              color: white;
+              side: double;
+              transparent: true;
+              opacity: 0">
+          <a-entity
+            class ='ignoreTemplate'>
+            <a-entity position="0 0 0"
+                      text="
+                          color: white;
+                          width: 4;
+                          lineHeight: 34;
+                          align: center;
+                          value: Embracing  The\n Future ;
+                          font: https://assets.scapic.com/fonts/Colors.fnt;
+                          fontImage: https://assets.scapic.com/fonts/Colors.png" >
+            </a-entity>
+        </a-entity>
+        </a-entity>
+
+        <a-entity
+          id="welcome"
+          scale="0.5 0.5 0.5"
+          position="0.6 2.1 0"
+          geometry="
+              primitive: plane;
+              width: 2;
+              height: 0.7"
+          material="
+              color: white;
+              side: double;
+              transparent: true;
+              opacity: 0">
+          <a-entity
+            class ='ignoreTemplate'>
+            <a-entity position="0 0 0"
+                      text="
+                          color: white;
+                          width: 4;
+                          lineHeight: 34;
+                          align: center;
+                          value: MADE ON SCAPIC AR ;
+                          font: https://assets.scapic.com/fonts/Fredoka_One.fnt;
+                          fontImage: https://assets.scapic.com/fonts/Fredoka_One.png" >
+            </a-entity>
+        </a-entity>
+        </a-entity>
+
+        <a-entity
+          id="welcome"
+          scale="0.5 0.5 0.5"
+          position="0.6 1.5 0"
+          geometry="
+              primitive: plane;
+              width: 2;
+              height: 0.7"
+          material="
+              color: white;
+              side: double;
+              transparent: true;
+              opacity: 0">
+          <a-entity
+            class ='ignoreTemplate'>
+            <a-entity position="0 0 0"
+                      text="
+                          color: white;
+                          width: 4;
+                          lineHeight: 34;
+                          align: center;
+                          value: Click on the location tag to begin ;
+                          font: https://assets.scapic.com/fonts/Fredoka_One.fnt;
+                          fontImage: https://assets.scapic.com/fonts/Fredoka_One.png" >
+            </a-entity>
+        </a-entity>
+        </a-entity>
+
+        <a-entity position="0 -0.1 0"  id="location">
+        <a-entity
+        geometry="primitive: sphere; radius:0.6; phiLength:180; "
+        material="color: red"
+        position="0.6 1.28 0"
+        rotation="-90 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        geometry="primitive: cone; radiusBottom: 0; radiusTop: 0.6"
+        material="color: red"
+        position="0.6 1.13 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+      </a-entity>
+
+        <a-entity
+        id="earth"
+        position="0.6 0 0"
+        scale="0.9 0.9 0.9"
+        rotation="0 0 -30"
+        gltf-model="src: url(./models/earth.gltf);"
+        >
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360 -30" repeat="indefinite"></a-animation>
+        </a-entity>
+
+      </a-entity>
+
+
+      <a-entity id="scene2" visible="false">
+
+        <a-entity
+        <a-entity
+          id="2nd"
+          scale="0.7 0.7 0.7"
+          position="2 1.2 0"
+          geometry="
+              primitive: plane;
+              width: 2;
+              height: 0.7"
+          material="
+              color: white;
+              side: double;
+              transparent: true;
+              opacity: 0">
+          <a-entity
+            class ='ignoreTemplate'>
+            <a-entity position="0 0 0"
+                      text="
+                          color: white;
+                          width: 4;
+                          lineHeight: 34;
+                          align: left;
+                          value: Ever since our inception on \nearth, we have used our legs \nto get to places \n\n Click on the human to see \nhow we get around;
+                          font: https://assets.scapic.com/fonts/Aleo.fnt;
+                          fontImage: https://assets.scapic.com/fonts/Aleo.png"
+
+                          material="side:double;" >
+            </a-entity>
+        </a-entity>
+        </a-entity>
+
+        <a-entity
+        id="man"
+        position="0 0 0"
         scale="1 1 1"
-        position="-1.5 1 0"
+        json-model="src: url(./models/bot4.json);"
+        animation-mixer="clip: walk"
+        >
+        </a-entity>
+
+        <a-entity visible="false"
+          id="nextButton"
+          scale="1 1 1"
+          position="2.750 0.423 0.047"
+          geometry="
+              primitive: plane;
+              width: 2;
+              height: 0.7"
+          material="
+              color: white;
+              side: double;
+              transparent: true;
+              opacity: 0">
+          <a-entity
+            class ='ignoreTemplate'>
+            <a-entity position="0 0 0"
+                      text="
+                          color: black;
+                          width: 4;
+                          lineHeight: 34;
+                          align: left;
+                          value: Next;
+                          font: https://assets.scapic.com/fonts/Fredoka_One.fnt;
+                          fontImage: https://assets.scapic.com/fonts/Fredoka_One.png"
+
+                          material="side:double;" >
+            </a-entity>
+        </a-entity>
+        </a-entity>
+
+        <a-entity visible="false"
+        id="s2box"
+        geometry="primitive: box"
+        material="color: white"
+        position="0.95 0.4 0"
+        scale="0.8 0.3 0.08"
+        ></a-entity>
+      </a-entity>
+
+    <a-entity id="scene3" visible="true">
+
+      <!-- Player -->
+      <a-entity
+        id="s3text"
+        scale=" 1 1 1"
+        position="1.3 2 0.06"
         geometry="
             primitive: plane;
             width: 2;
@@ -24,7 +223,6 @@
             transparent: true;
             opacity: 0">
         <a-entity
-          position="1.086 0.037 0.01"
           class ='ignoreTemplate'>
           <a-entity position="0 0 0"
                     text="
@@ -32,44 +230,70 @@
                         width: 4;
                         lineHeight: 34;
                         align: left;
-                        value: Hi! I am Person One\nand I am on the\nextreme left ;
-                        font: https://assets.scapic.com/fonts/Aleo.fnt;
-                        fontImage: https://assets.scapic.com/fonts/Aleo.png" >
+                        value: THE FUTURE;
+                        font: https://assets.scapic.com/fonts/Colors.fnt;
+                        fontImage: https://assets.scapic.com/fonts/Colors.png"
+
+                        material="side:double;" >
           </a-entity>
       </a-entity>
       </a-entity>
-      <!-- Player -->
+
+      <a-entity position="-1.1 -0.5 0" id="startButton">
       <a-entity
-      id="box"
       geometry="primitive: box"
-      material="color: blue"
+      material="color: #484040"
       position="1 2 0.25"
-      scale="0.5 0.5 0.5"
+      rotation="40 0 0"
+      scale="0.5 0.110 0.5"
       ></a-entity>
 
       <a-entity
-      id="man"
-      position="0 0 0"
+      geometry="primitive: cylinder; radius:0.4"
+      material="color: red"
+      position="1 2.07 0.28"
+      rotation="40 0 0"
+      scale="0.5 0.13 0.5"
+      ></a-entity>
+  </a-entity>
+
+      <a-entity
+      id="drone"
+      position="0 0 -1"
       scale="1 1 1"
-      json-model="src: url(./models/bot4.json);"
-      animation-mixer="clip: run"
+      gltf-model-next="src: url(./models/busterDrone.gltf);"
       >
       </a-entity>
+    </a-entity>
+
+
 
     </a-marker>
-    <a-entity camera mouse-cursor>
 
-    </a-entity>
-    <!-- <a-sky color="#000"></a-sky>
-  <a-entity position="0 1.8 3">
-    <a-entity camera look-controls></a-entity>
-  </a-entity> -->
+    
   </a-scene>
   <script>
-  document.getElementById("box").addEventListener('click',function(evt){
-    console.log('Click Registered');
-      document.getElementById('man').setAttribute('animation-mixer','clip','walk');
+  document.getElementById("location").addEventListener('click',function(evt){
+      console.log("You are the creator");
+      document.getElementById('scene1').setAttribute('visible','false');
+      document.getElementById('scene2').setAttribute('visible','true');
     });
+  document.getElementById("man").addEventListener('click',function(evt){
+      document.getElementById('man').setAttribute('animation-mixer','clip','run');
+      document.getElementById('s2box').setAttribute('visible','true');
+      document.getElementById('nextButton').setAttribute('visible','true');
+    });
+
+    document.getElementById("s2box").addEventListener('click',function(evt){
+      document.getElementById('scene2').setAttribute('visible','false');
+      document.getElementById('scene3').setAttribute('visible','true');
+      });
+
+    document.getElementById("startButton").addEventListener('click',function(evt){
+      document.getElementById('startButton').setAttribute('visible','false');
+      document.getElementById('s3text').setAttribute('visible','false');
+        document.getElementById('drone').setAttribute('animation-mixer','clip','BusterDrone');
+      });
   </script>
 
 </body>
