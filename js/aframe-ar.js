@@ -373,7 +373,7 @@ THREEx.ArMarkerControls.prototype.updateWithModelViewMatrix = function(modelView
 	var markerObject3D = this.object3d;
 
 	// mark object as visible
-	markerObject3D.visible = false
+	markerObject3D.visible = true
 
 	if( this.context.parameters.arBackend === 'artoolkit' ){
 		// apply context._axisTransformMatrix - change artoolkit axis to match usual webgl one
@@ -406,7 +406,7 @@ THREEx.ArMarkerControls.prototype.updateWithModelViewMatrix = function(modelView
 
 	// decompose - the matrix into .position, .quaternion, .scale
 	markerObject3D.matrix.decompose(markerObject3D.position, markerObject3D.quaternion, markerObject3D.scale)
-
+	console.log(markerObject3D.position);
 	// dispatchEvent
 	this.dispatchEvent( { type: 'markerFound' } );
 }
