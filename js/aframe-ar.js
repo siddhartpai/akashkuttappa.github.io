@@ -406,6 +406,7 @@ THREEx.ArMarkerControls.prototype.updateWithModelViewMatrix = function(modelView
 
 	// decompose - the matrix into .position, .quaternion, .scale
 	markerObject3D.matrix.decompose(markerObject3D.position, markerObject3D.quaternion, markerObject3D.scale)
+
 	// dispatchEvent
 	this.dispatchEvent( { type: 'markerFound' } );
 }
@@ -493,7 +494,6 @@ THREEx.ArMarkerControls.prototype._initArtoolkit = function(){
 	}
 
 	function onMarkerFound(event){
-		console.log("This marker FOund")
 		// honor his.parameters.minConfidence
 		if( event.data.type === artoolkit.PATTERN_MARKER && event.data.marker.cfPatt < _this.parameters.minConfidence )	return
 		if( event.data.type === artoolkit.BARCODE_MARKER && event.data.marker.cfMatt < _this.parameters.minConfidence )	return
