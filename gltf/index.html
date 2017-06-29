@@ -7,12 +7,19 @@
 
 
   <a-scene>
+    <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
+  <a-entity light="type: directional;
+                   castShadow: true;
+                   intensity: 0.4;
+                   shadowCameraVisible: true;"
+            position="-5 3 1.5"></a-entity>
       <a-entity
       id="earth"
       position="0 0 0"
       scale="0.3 0.3 0.3"
       rotation="-20 0 0"
       gltf-model-next="src: url(../models/finaltree.gltf);"
+      shadow="cast: true"
       >
       </a-entity>
       <a-entity
@@ -21,10 +28,20 @@
       scale="0.3 0.3 0.3"
       rotation="-20 100 0"
       gltf-model-next="src: url(../models/finaltree.gltf);"
+      shadow="cast: true"
       >
       </a-entity>
 
-    <a-sky color="#000"></a-sky>
+      <a-entity
+        geometry="primitive: circle"
+        rotation="-90 0 0"
+        scale="20 20 20"
+        material="src: url(ground.jpg); repeat: 20 20" shadow="receive: true">
+      </a-entity>
+
+
+
+    <a-sky color="#ffb998"></a-sky>
   <a-entity position="0 1.8 3">
     <a-entity camera look-controls mouse-cursor></a-entity>
   </a-entity>
