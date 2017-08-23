@@ -1,0 +1,44 @@
+
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js">	
+
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene>
+<a-entity class ='ignoreTemplate' position="-0.6 -0.1 .01"
+                scale="2 2 2">
+                <a-entity position="0.4 0.1 0"
+                      scale="0.4 0.4 0.4"
+                      class="text1"
+                      text="color: white; wrapCount:22; width: 3; lineHeight: 28;align: left; 
+                      value: A Trek To The Himalayas;
+                      font: https://assets.scapic.com/fonts/Aleo.fnt; 
+                      fontImage: https://assets.scapic.com/fonts/Aleo.png" >
+                </a-entity>
+
+                <a-entity
+                      class="shape1"
+                      position="0.37 0.04 0"
+                      geometry="primitive: plane; width: 1.15; height: 0.006"
+                      material="color: white">
+                <a-entity
+                      class="shape1"
+                      position="-0.3 0 0.001"
+                      geometry="primitive: plane; width: 0.2; height: 0.006"
+                      material="color: red">
+              </a-entity>
+        </a-entity>
+
+        <a-entity position="0.05 0 0.01" 
+                      scale="0.3 0.3 0.3"
+                      class="text2"
+                      text="color: white; wrapCount:12; width: 2; lineHeight: 28; align: right; 
+                      value: SHORT MOVIE;  
+                      font: https://assets.scapic.com/fonts/Edo.fnt; 
+                      fontImage: https://assets.scapic.com/fonts/Edo.png" >
+        </a-entity>
+        </a-entity>
+        </a-entity>
+    <a-entity camera></a-entity>
+    </a-scene>
+</body>
